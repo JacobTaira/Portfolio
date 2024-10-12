@@ -15,6 +15,9 @@ const projects = [
 ---
 
 <Layout title = "Projects">
+  <div class="intro-text">
+    <p>Hello! I'm Jacob, a passionate developer interested in robotics, AI, and computer science...</p>
+  </div>
   <h1>Projects</h1>
   {projects.map(project => (
     <ProjectCard {...project} />
@@ -39,12 +42,11 @@ const projects = [
   margin: 0 auto;
   padding: 2rem;
 }
-
 /* Introduction Text */
 .intro-text p {
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.2;
   margin: 2rem 0;
   color: #333;
 }
