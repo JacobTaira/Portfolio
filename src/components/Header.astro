@@ -1,0 +1,74 @@
+---
+//imports here
+---
+
+<header>
+    <div class="header-left">
+      <a href="#"><img src="/Portfolio/HeaderLogo.svg" alt="Logo" class="header-logo"></a>
+      <h1>Jacob Taira <span>&lt; phrase generator w/ decoding effect &gt;</span></h1>
+    </div>
+  
+    <div class="header-right">
+      <span class="date-time">Friday, Sept 20 3:27 PM</span>
+      <div class="nav-icons">
+        <a href="/home"><img src="/Portfolio/home.svg" alt="Home Icon"></a>
+        <a href="/info"><img src="/Portfolio/info.svg" alt="Info Icon"></a>
+        <a href="/lightbulb"><img src="/Portfolio/lightbulb.svg" alt="Lightbulb Icon"></a>
+      </div>
+    </div>
+  </header>
+  
+  <style>
+    header {
+      width: 100%;
+      height: 5rem;
+      padding: 1rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: space-between; /* Distribute space between left and right sections */
+      align-items: center; /* Vertically align items */
+      user-select: none; /* Disables text selection */
+      border-bottom-color: #838383;
+      border-bottom-width: .1rem;
+    }
+    .header-left{
+        display: flex;
+        align-items: center;
+    }
+    .header-left h1 {
+      margin-left: 2rem;
+      font-size: 1.5rem;
+    }
+    .header-left span {
+      font-size: 0.875rem;
+      opacity: 0.8;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header-logo{
+        width: 3.5rem; /* Set width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .date-time {
+      margin-right: 1rem;
+      font-size: 0.875rem;
+    }
+    .nav-icons {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .nav-icons a img {
+      width: 24px;
+      height: 24px;
+    }
+    a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+    }
+  </style>
+  

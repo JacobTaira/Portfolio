@@ -1,47 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+interface Props {
+  projects: { title: string; description: string; link: string }[];
+}
+
+const projects = [
+  { title: 'FTC Tracker', description: 'A React Native app for FTC teams.', link: '#' },
+  { title: 'GPA Calculator', description: 'A GUI for automatic GPA calculation.', link: '#' },
+  { title: 'YouTube Chain Game', description: 'A puzzle game based on YouTube recommendations.', link: '#' }
+];
+
 ---
 
-<Layout title="Welcome to Astro.">
-	<section class="main-content">
-		<header>
-
-		  <div class="header-left">
-			<h1>Jacob Taira <span>&lt; phrase generator w/ decoding effect&gt;</span></h1>
-		  </div>
-
-		  <div class="header-right">
-			<span class="date-time">Friday, Sept 20 3:27 PM</span>
-			<div class="nav-icons">
-			  <a href="/home"><img src="/public/home.svg" alt="Home Icon"></a>
-			  <a href="/info"><img src="/public/info.svg" alt="Info Icon"></a>
-			  <a href="/lightbulb"><img src="/public/lightbulb.svg" alt="Lightbulb Icon"></a>
-			</div>	
-		  </div>
-
-		</header>
-	  
-		<main>
-		  <article class="intro-text">
-			<p>
-			  I like robots and programming :)
-			</p>
-		  </article>
-	  
-		  <section class="projects">
-			<h2>Projects</h2>
-
-			<div class="project-grid">
-			  <div class="project-card">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-			  </div>
-			  <!-- Add more project cards as needed -->
-			</div>
-		  </section>
-
-		</main>
-	  </section>
+<Layout title = "Projects">
+  <h1>Projects</h1>
+  {projects.map(project => (
+    <ProjectCard {...project} />
+  ))}
 </Layout>
 
 <style>
@@ -52,50 +29,15 @@ import Card from '../components/Card.astro';
   background-color: #f8f9fa;
 }
 
+  h1{
+    user-select: none; /* Disables text selection */
+    margin-bottom: 1rem;
+}
+
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #eaeaea;
-}
-
-.header-left h1 {
-  font-size: 1.5rem;
-  margin: 0;
-  font-weight: bold;
-}
-
-.header-left h1 span {
-  font-weight: normal;
-  color: #888;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-.date-time {
-  margin-right: 1rem;
-  font-size: 0.875rem;
-  color: #666;
-}
-
-.nav-icons a {
-  margin-left: 0.5rem;
-}
-
-.nav-icons img {
-  width: 24px;
-  height: 24px;
-  background-color: #333;
 }
 
 /* Introduction Text */
@@ -107,36 +49,10 @@ header {
   color: #333;
 }
 
-/* Projects Section */
-.projects {
-  margin-top: 3rem;
-}
-
-.projects h2 {
-  font-size: 1rem;
-  letter-spacing: 2px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #999;
-  margin-bottom: 1rem;
-}
-
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
-.project-card {
-  padding: 1.5rem;
-  background-color: #f1f1f1;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
-  color: #444;
-}
-
-.project-card p {
-  margin: 0;
-}
 </style>

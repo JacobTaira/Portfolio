@@ -19,38 +19,7 @@ body {
     padding: 1rem 0;
     border-bottom: 1px solid #eaeaea;
   }
-  
-  .header-left h1 {
-    font-size: 1.5rem;
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  .header-left h1 span {
-    font-weight: normal;
-    color: #888;
-  }
-  
-  .header-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .date-time {
-    margin-right: 1rem;
-    font-size: 0.875rem;
-    color: #666;
-  }
-  
-  .nav-icons a {
-    margin-left: 0.5rem;
-  }
-  
-  .nav-icons img {
-    width: 24px;
-    height: 24px;
-  }
-  
+
   /* Introduction Text */
   .intro-text p {
     font-size: 1.25rem;

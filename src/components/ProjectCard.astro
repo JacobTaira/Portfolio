@@ -1,0 +1,38 @@
+---
+// Props: title, description, and optional link
+export interface Props {
+  title: string;
+  description: string;
+  link?: string;
+}
+const { title, description, link} = Astro.props;
+---
+
+<div class="project-card">
+    <a href={link}>
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </a>
+</div>
+
+<style>
+  .project-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: white; 
+    transition: transform 0.2s, box-shadow 0.2s;
+    user-select: none; /* Disables text selection */
+  }
+  .project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
+    /*horizontal-offset vertical-offset blur-radius spread-radius color;*/
+  }
+  .project-card a {
+    display: block; /* Makes the link cover the entire card */
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits text color */
+  }
+</style>
