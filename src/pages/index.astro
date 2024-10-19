@@ -7,7 +7,7 @@ interface Props {
 }
 
 const projects = [
-  { title: 'FTC Tracker', description: 'A React Native app for FTC teams.', link: '#' },
+  { title: 'FTC Tracker', description: 'A React Native app for FTC teams.', link: 'https://ftc-tracker.gitbook.io/ftc-tracker' },
   { title: 'GPA Calculator', description: 'A GUI for automatic GPA calculation.', link: '#' },
   { title: 'YouTube Chain Game', description: 'A puzzle game based on YouTube recommendations.', link: '#' }
 ];
@@ -18,7 +18,8 @@ const projects = [
   <div class="intro-text">
     <p>Hello! I'm Jacob, a passionate developer interested in robotics, AI, and computer science...</p>
   </div>
-  <h1>Projects</h1>
+  <hr />
+  <h1>PROJECTS</h1>
   {projects.map(project => (
     <ProjectCard {...project} />
   ))}
@@ -31,9 +32,16 @@ const projects = [
   padding: 0;
   background-color: #f8f9fa;
 }
-
-  h1{
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+  }
+h1{
     user-select: none; /* Disables text selection */
+    color:#838383;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
@@ -44,17 +52,10 @@ const projects = [
 }
 /* Introduction Text */
 .intro-text p {
-  font-size: 1.55rem;
+  font-size: 2.5rem;
   font-weight: bold;
   line-height: 1.2;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   color: #333;
 }
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
 </style>

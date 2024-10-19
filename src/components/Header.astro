@@ -1,5 +1,6 @@
 ---
 //imports here
+import CurrentDate from "./CurrentDate.astro"
 ---
 
 <header>
@@ -7,13 +8,13 @@
       <a href="#"><img src="/Portfolio/HeaderLogo.svg" alt="Logo" class="header-logo"></a>
       <h1>Jacob Taira <span>&lt; phrase generator w/ decoding effect &gt;</span></h1>
     </div>
-  
+    
     <div class="header-right">
-      <span class="date-time">Friday, Sept 20 3:27 PM</span>
+      <CurrentDate/>
       <div class="nav-icons">
         <a href="/home"><img src="/Portfolio/home.svg" alt="Home Icon"></a>
-        <a href="/info"><img src="/Portfolio/info.svg" alt="Info Icon"></a>
-        <a href="/lightbulb"><img src="/Portfolio/lightbulb.svg" alt="Lightbulb Icon"></a>
+        <a href="/lightbulb"><img src="/Portfolio/unselected_lightbulb.svg" alt="Lightbulb Icon"></a>
+        <a href="/info"><img src="/Portfolio/unselected_info.svg" alt="Info Icon"></a>
       </div>
     </div>
   </header>
@@ -31,15 +32,15 @@
       align-items: center; /* Vertically align items */
       user-select: none; /* Disables text selection */
       border-bottom-color: #838383;
-      border-bottom-width: .1rem;
+      border-bottom-width: .05rem;
     }
     .header-left{
         display: flex;
         align-items: center;
     }
     .header-left h1 {
-      margin-left: 2rem;
-      font-size: 1.5rem;
+      margin-left: 1.2rem;
+      font-size: 1.3rem;
     }
     .header-left span {
       font-size: 0.875rem;
@@ -51,15 +52,24 @@
       gap: 1rem;
     }
     .header-logo{
-        width: 3.5rem; /* Set width */
+        width: 4.5rem; /* Set width */
         height: auto; /* Maintain aspect ratio */
     }
     .date-time {
       margin-right: 1rem;
-      font-size: 0.875rem;
+      font-size: 1.3rem;
     }
     .nav-icons {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-width: 1px;
+      height: 2rem;
+      width: 10rem;
+      border-color: #838383;
+      border-radius: 8px;
+      margin-left: 2rem;
+      padding: 0 20px;
       gap: 0.5rem;
     }
     .nav-icons a img {

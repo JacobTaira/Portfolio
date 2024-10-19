@@ -1,0 +1,27 @@
+---
+const now = new Date();
+const options: Intl.DateTimeFormatOptions = {
+  weekday: 'long',
+  month: 'short',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  hour12: true,
+};
+
+// Create the formatter with locale and options
+const formatter = new Intl.DateTimeFormat('en-US', options);
+const formattedDate = formatter.format(now).replace(',', '');
+---
+
+<style>
+  .current-date {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+  }
+</style>
+
+<div class="current-date">
+  {formattedDate}
+</div>

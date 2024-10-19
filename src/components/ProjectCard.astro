@@ -9,7 +9,7 @@ const { title, description, link} = Astro.props;
 ---
 
 <div class="project-card">
-    <a href={link}>
+    <a href={link} target="_blank" rel="noopener noreferrer">
       <h2>{title}</h2>
       <p>{description}</p>
     </a>
