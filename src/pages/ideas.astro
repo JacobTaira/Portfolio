@@ -3,7 +3,22 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Ideas">
-  <h1>Ideas</h1>
-  <p>Here are some ideas I’ve been brainstorming...</p>
+<Layout title="Ideas Page">
+  <div class="container">
+   <p>Here are some ideas I’ve been brainstorming...</p>
+  </div>
 </Layout>
+
+<style>
+  body{
+    font-family: 'Arial', 'sans-serif';
+    background-color: #f8f9fa;
+  }
+  .container{
+    display: flex;
+    height: 1500px;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #838383;
+  }
+</style>

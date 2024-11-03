@@ -1,84 +1,95 @@
 ---
 //imports here
 import CurrentDate from "./CurrentDate.astro"
+const currentPath = Astro.url.pathname;
 ---
 
 <header>
-    <div class="header-left">
-      <a href="#"><img src="/Portfolio/HeaderLogo.svg" alt="Logo" class="header-logo"></a>
-      <h1>Jacob Taira <span>&lt; phrase generator w/ decoding effect &gt;</span></h1>
-    </div>
-    
-    <div class="header-right">
-      <CurrentDate/>
-      <div class="nav-icons">
-        <a href="/home"><img src="/Portfolio/home.svg" alt="Home Icon"></a>
-        <a href="/lightbulb"><img src="/Portfolio/unselected_lightbulb.svg" alt="Lightbulb Icon"></a>
-        <a href="/info"><img src="/Portfolio/unselected_info.svg" alt="Info Icon"></a>
-      </div>
-    </div>
-  </header>
+  <div class="header-left">
+    <a href="#"><img src="/Portfolio/HeaderLogo.svg" alt="Logo" class="header-logo"></a>
+    <h1>Jacob Taira <span>&lt; phrase generator w/ decoding effect &gt;</span></h1>
+  </div>
   
-  <style>
-    header {
-      width: 100%;
-      height: 5rem;
-      padding: 1rem;
-      padding-left: 4rem;
-      padding-right: 4rem;
-      background-color: rgb(255, 255, 255);
-      display: flex;
-      justify-content: space-between; /* Distribute space between left and right sections */
-      align-items: center; /* Vertically align items */
-      user-select: none; /* Disables text selection */
-      border-bottom-color: #838383;
-      border-bottom-width: .05rem;
-    }
-    .header-left{
-        display: flex;
-        align-items: center;
-    }
-    .header-left h1 {
-      margin-left: 1.2rem;
-      font-size: 1.3rem;
-    }
-    .header-left span {
-      font-size: 0.875rem;
-      opacity: 0.8;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .header-logo{
-        width: 4.5rem; /* Set width */
-        height: auto; /* Maintain aspect ratio */
-    }
-    .date-time {
-      margin-right: 1rem;
-      font-size: 1.3rem;
-    }
-    .nav-icons {
+  <div class="header-right">
+    <CurrentDate />
+    <div class="nav-icons">
+      <a href="/Portfolio">
+        <img src={currentPath === '/Portfolio/' ? '/Portfolio/selected_home.svg' : '/Portfolio/unselected_home.svg'} alt="Home Icon" />
+      </a>
+
+      <a href="/Portfolio/ideas">
+        <img src={currentPath === '/Portfolio/ideas' ? '/Portfolio/selected_lightbulb.svg' : '/Portfolio/unselected_lightbulb.svg'} alt="Lightbulb Icon" />
+      </a>
+
+      <a href="/Portfolio/about">
+        <img src={currentPath === '/Portfolio/about' ? '/Portfolio/selected_about.svg' : '/Portfolio/unselected_about.svg'} alt="Info Icon" />
+      </a>
+    </div>
+  </div>
+</header>
+  
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    user-select: none;       
+    border-bottom-color: #838383;
+    border-bottom-width: .05rem;
+  }
+  .header-left{
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      border-width: 1px;
-      height: 2rem;
-      width: 10rem;
-      border-color: #838383;
-      border-radius: 8px;
-      margin-left: 2rem;
-      padding: 0 20px;
-      gap: 0.5rem;
-    }
-    .nav-icons a img {
-      width: 24px;
-      height: 24px;
-    }
-    a {
-      color: rgb(0, 0, 0);
-      text-decoration: none;
-    }
-  </style>
+  }
+  .header-left h1 {
+    margin-left: 1.2rem;
+    font-size: 1.3rem;
+  }
+  .header-left span {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .header-logo{
+      width: 4.5rem; /* Set width */
+      height: auto; /* Maintain aspect ratio */
+  }
+  .date-time {
+    margin-right: 1rem;
+    font-size: 1.3rem;
+  }
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-width: 1px;
+    height: 2rem;
+    width: 10rem;
+    border-color: #838383;
+    border-radius: 8px;
+    margin-left: 2rem;
+    padding: 0 20px;
+    gap: 0.5rem;
+  }
+  .nav-icons a img {
+    width: 24px;
+    height: 24px;
+  }
+  a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+</style>
   

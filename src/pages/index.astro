@@ -14,7 +14,7 @@ const projects = [
 
 ---
 
-<Layout title = "Projects">
+<Layout title = "Home Page">
   <div class="intro-text">
     <p>Hello! I'm Jacob, a passionate developer interested in robotics, AI, and computer science...</p>
   </div>
@@ -28,25 +28,29 @@ const projects = [
     <div class="container">
 
       <div class="col-left">
-        <div class="row row1">
+        <div class="row row1"></div>
 
-        </div>
-
-        <div class="row row3">
+        <div class="row row2">
           <div class="row-col left"></div>
           <div class="row-col right"></div>
         </div>
 
-        <div class="row row2"></div>
+        <div class="row row3"></div>
 
+        <div class="row row4"></div>
       </div>
 
       <div class="col-right">
         <div class="row row1"></div>
+
         <div class="row row2"></div>
+
         <div class="row row3">
           <div class="row-col left"></div>
+
           <div class="row-col right">
+            <div class="row-col"></div>
+            <div class="row-col"></div>
           </div>
         </div>
       </div>
@@ -56,32 +60,16 @@ const projects = [
 </Layout>
 
 <style>
+  /* CONTAINER STYLES */
   .container{
-    background-color: #f8f9fa;
     display: flex;
     gap: .5rem;
     width: 1000px;
-    height: 1000px;
-  }
-
-
-
-  .col-left{
-    flex: 1;
-    gap: .5rem;
-    display: flex;
-    flex-direction: column;
+    height: 1500px;
   }
   .row{
-    flex: 1;
     border-radius: 12px;
     border: 1px solid #838383;
-  }
-  .row3{
-    display:flex;
-    flex: 0.5;
-    gap: 0.5rem;
-    border-width: 0px;
   }
   .row-col{ 
     flex: 1;
@@ -89,8 +77,31 @@ const projects = [
     border-radius: 12px;
   }
 
+ /* LEFT COLUMN STYLES */
+  .col-left{
+    flex: 1;
+    gap: .5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .col-left .row1{
+    height: 20rem;
+  }
+  .col-left .row2{
+    display:flex;
+    height: 12rem;
+    gap: 0.5rem;
+    border-width: 0px;
+  }
+  .col-left .row3{
+    height: 18rem;
+  }
+  .col-left .row4{
+    height: 21.5rem;
+  }
+ 
 
-
+ /* RIGHT COLUMN STYLES */
   .col-right{
     flex: 1;
     gap: .5rem;
@@ -98,18 +109,32 @@ const projects = [
     flex-direction: column;
   }
   .col-right .row1{
-    flex: 1.4;
+    height: 23rem;
     border: 1px solid #838383;
   }
   .col-right .row2{
     border: 1px solid #838383;
+    height: 14rem;
     border-radius: 12px;
   }
+  .col-right .row3{
+    display:flex;
+    height: 35rem;
+    gap: 0.5rem;
+    border-width: 0px;
+  }
+  .col-right .row3 .right{
+    flex: 1;
+    border-width: 0px;
+    gap: .5rem;
+    display: flex;
+    flex-direction: column;
+  } 
 
 
-
+ /* PAGE STYLES */
   body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', 'sans-serif';
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
