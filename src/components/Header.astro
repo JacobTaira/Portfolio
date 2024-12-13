@@ -44,6 +44,7 @@ const currentPath = Astro.url.pathname;
     user-select: none;       
     border-bottom-color: #838383;
     border-bottom-width: .05rem;
+    z-index: 10; /*prevents project cards from clipping through header on hover*/
   }
   .header-left{
       display: flex;

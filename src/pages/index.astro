@@ -7,11 +7,16 @@ interface Props {
 }
 
 const projects = [
-  { title: 'FTC Tracker', description: 'A React Native app for FTC teams.', link: 'https://ftc-tracker.gitbook.io/ftc-tracker' },
-  { title: 'GPA Calculator', description: 'A GUI for automatic GPA calculation.', link: '#' },
-  { title: 'YouTube Chain Game', description: 'A puzzle game based on YouTube recommendations.', link: '#' }
+  { title: 'FTC Tracker', 
+    description: 'A React Native app for FTC teams.', 
+    link: 'https://ftc-tracker.gitbook.io/ftc-tracker', 
+    image1: "public/projectimages/project1images/logoNew.png"
+  },
+  { title: 'GPA Calculator', 
+    description: 'A GUI for automatic GPA calculation.', 
+    link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' 
+  },
 ];
-
 ---
 
 <Layout title = "Home Page">
@@ -20,52 +25,46 @@ const projects = [
   </div>
   <hr />
   <h1>PROJECTS</h1>
-  <!-- {projects.map(project => (
-    <ProjectCard {...project} />
-  ))} -->
-
   
     <div class="container">
+
       <div class="col-left">
-        <div class="row row1"></div>
+        <div class="row row1">
+          <ProjectCard link={projects[0].link} image={projects[0].image1} imageClass='project-1-image-1'/>
+        </div>
 
         <div class="row row2">
-          <div class="row-col left"></div>
-          <div class="row-col right"></div>
+          <div class="row-col left"><ProjectCard link={projects[0].link}/></div>
+          <div class="row-col right"><ProjectCard link={projects[0].link}/></div>
         </div>
 
         <div class="row row3">
-          <div class="project-2-title">
-            <p>Project 2</p>
-          </div>
+          <ProjectCard link={projects[1].link} title={projects[1].title} descriptionClass='project-2-title'/>
         </div>
 
         <div class="row row4">
-          <div class="project-2-description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-          </div>
+          <ProjectCard link={projects[1].link} description={projects[1].description} descriptionClass='project-2-description'/>
         </div>
       </div>
 
+
       <div class="col-right">
         <div class="row row1">
-          <div class="project-1-description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-          </div>
+          <ProjectCard link={projects[0].link} description={projects[0].description} descriptionClass='project-1-description'/>
         </div>
 
         <div class="row row2">
           <div class="project-1-title">
-            <p>Project 1</p>
           </div>
+          <ProjectCard link={projects[0].link} description={projects[0].title} descriptionClass='project-1-title'/>
         </div>
 
         <div class="row row3">
-          <div class="row-col left"></div>
+          <div class="row-col left"><ProjectCard link={projects[1].link}/></div>
 
           <div class="row-col right">
-            <div class="row-col"></div>
-            <div class="row-col"></div>
+            <div class="row-col"><ProjectCard link={projects[1].link}/></div>
+            <div class="row-col"><ProjectCard link={projects[1].link}/></div>
           </div>
         </div>
       </div>
@@ -85,11 +84,9 @@ const projects = [
   }
   .row{
     border-radius: 12px;
-    border: 1px solid #838383;
   }
   .row-col{ 
     flex: 1;
-    border: 1px solid #838383;
     border-radius: 12px;
   }
 
@@ -115,29 +112,6 @@ const projects = [
   .col-left .row4{
     height: 21.5rem;
   }
-  .project-2-description{
-    display: flex;
-    align-items: center;
-    height: 75%;
-    padding: 1rem;
-    padding-bottom: 3rem;
-    padding-right: 6rem;
-    font-size: 1.8rem;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #333;
-  }
-  .project-2-title{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    padding: 1rem;
-    font-size: 2.7rem;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #333;
-  }
  
 
  /* RIGHT COLUMN STYLES */
@@ -149,10 +123,8 @@ const projects = [
   }
   .col-right .row1{
     height: 23rem;
-    border: 1px solid #838383;
   }
   .col-right .row2{
-    border: 1px solid #838383;
     height: 14rem;
     border-radius: 12px;
   }
@@ -169,32 +141,6 @@ const projects = [
     display: flex;
     flex-direction: column;
   } 
-  .project-1-description{
-    display: flex;
-    align-items: center;
-    text-align: end;
-    height: 75%;
-    padding: 1rem;
-    padding-left: 6rem;
-    font-size: 1.8rem;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #333;
-  }
-  .project-1-title{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    text-align: end;
-    height: 100%;
-    padding: 1rem;
-    padding-top: 5rem;
-    font-size: 2.7rem;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #333;
-  }
-
 
  /* PAGE STYLES */
   body {
