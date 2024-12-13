@@ -34,7 +34,6 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
   .project-card:hover {
     transform: scale(1.02);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
-    /*horizontal-offset vertical-offset blur-radius spread-radius color;*/
   }
   .project-card a {
     display: block; /* Makes the link cover the entire card */
@@ -94,12 +93,11 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
     height: auto; 
     border-radius: 8px;
     filter: blur(5px);
-    transition: filter 0.3s; 
+    transition: filter 0.4s ease; 
   }
-  .project-1-image-1:hover {
+  .project-card:hover .project-1-image-1{
     filter: blur(0); 
   }
-
   .image-container{
     height:100%;
     display: flex;
