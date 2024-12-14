@@ -14,7 +14,7 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
   <div class="project-card">
     {image && 
       <div class="image-container">
-        <img src={image} alt={`${title} thumbnail`} class={imageClass}/>
+        <img src={image} alt={`${title} thumbnail`} class={`${imageClass} project-image`} />
       </div>
     }
     <p class={descriptionClass}>{title ? title : description}</p>
@@ -88,21 +88,30 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
     color: #333;
   }
 
-  .project-1-image-1{
-    max-width: 50%; 
-    height: auto; 
-    border-radius: 8px;
-    filter: blur(5px);
-    transition: filter 0.4s ease; 
-  }
-  .project-card:hover .project-1-image-1{
-    filter: blur(0); 
-  }
   .image-container{
     height:100%;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .project-image{
+    border-radius: 8px;
+    filter: blur(4px);
+    transition: filter 0.4s ease;
+  }
+  .project-card:hover .project-image {
+    filter: blur(0);
+  }
+  .project-1-image-1{
+    max-width: 50%; 
+    height: auto; 
+  }
+  .project-1-image-2{
+    max-width: 155%; 
+    margin-left: 2rem;
+  }
+  .project-1-image-3{
+    max-width: 112.5%; 
   }
 
   h3{

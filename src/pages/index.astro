@@ -2,15 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
-interface Props {
-  projects: { title: string; description: string; link: string }[];
-}
-
 const projects = [
   { title: 'FTC Tracker', 
     description: 'A React Native app for FTC teams.', 
     link: 'https://ftc-tracker.gitbook.io/ftc-tracker', 
-    image1: "/Portfolio/projectimages/project1images/logoNew.png"
+    image1: "/Portfolio/projectimages/project1images/logoNew.png",
+    image2: "/Portfolio/projectimages/project1images/phoneDisplay.png",
+    image3: "/Portfolio/projectimages/project1images/scoutingSheet.png"
   },
   { title: 'GPA Calculator', 
     description: 'A GUI for automatic GPA calculation.', 
@@ -34,8 +32,8 @@ const projects = [
         </div>
 
         <div class="row row2">
-          <div class="row-col left"><ProjectCard link={projects[0].link}/></div>
-          <div class="row-col right"><ProjectCard link={projects[0].link}/></div>
+          <div class="row-col left"><ProjectCard link={projects[0].link} image={projects[0].image2} imageClass='project-1-image-2'/></div>
+          <div class="row-col right"><ProjectCard link={projects[0].link} image={projects[0].image3} imageClass='project-1-image-3'/></div>
         </div>
 
         <div class="row row3">
