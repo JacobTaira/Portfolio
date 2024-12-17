@@ -4,14 +4,15 @@ import ProjectCard from '../components/ProjectCard.astro';
 
 const projects = [
   { title: 'FTC Tracker', 
-    description: 'A React Native app for FTC teams.', 
+    description: 'A mobile app for FTC robotics teams to scout opponents and teammates during competition.', 
     link: 'https://ftc-tracker.gitbook.io/ftc-tracker', 
     image1: "/Portfolio/projectimages/project1images/logoNew.png",
     image2: "/Portfolio/projectimages/project1images/phoneDisplay.png",
     image3: "/Portfolio/projectimages/project1images/scoutingSheet.png"
   },
-  { title: 'GPA Calculator', 
-    description: 'A GUI for automatic GPA calculation.', 
+  { title: 'LISD Flextime App', 
+    description: 'A multiplatform collection of digital student resources for the Leander Independent School District.', 
+    image1: "/Portfolio/projectimages/project2images/LISD_Logo.png",
     link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' 
   },
 ];
@@ -19,7 +20,7 @@ const projects = [
 
 <Layout title = "Home Page">
   <div class="intro-text">
-    <p>Hello! I'm Jacob, a passionate developer interested in robotics, AI, and computer science...</p>
+    <p>Hi! I'm Jacob Taira, a high school senior in Texas currently experimenting with web development and artificial intelligence via computer science.</p>
   </div>
   <hr />
   <h1>PROJECTS</h1>
@@ -61,7 +62,7 @@ const projects = [
           <div class="row-col left"><ProjectCard link={projects[1].link}/></div>
 
           <div class="row-col right">
-            <div class="row-col"><ProjectCard link={projects[1].link}/></div>
+            <div class="row-col"><ProjectCard link={projects[1].link} image={projects[1].image1}/></div>
             <div class="row-col"><ProjectCard link={projects[1].link}/></div>
           </div>
         </div>
@@ -75,7 +76,6 @@ const projects = [
   /* CONTAINER STYLES */
   .container{
     display: flex;
-    
     gap: .5rem;
     width: 1000px;
     height: 1500px;
@@ -168,7 +168,7 @@ const projects = [
     font-size: 2.5rem;
     font-weight: bold;
     line-height: 1.2;
-    margin: 1.5rem 0;
+    margin: 4.5rem 0;
     color: #333;
   }
 </style>

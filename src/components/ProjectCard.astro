@@ -27,12 +27,13 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
     height: 100%;
     background-color: white; 
     padding: 1rem;
-    border: 1px solid #838383;
-    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e8e7e7;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.5s ease;
     user-select: none; /* Disables text selection */
   }
   .project-card:hover {
-    transform: scale(1.02);
+    background-color: #242424;
+    transform: scale(1.025);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
   }
   .project-card a {
@@ -40,17 +41,34 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
     text-decoration: none; /* Removes underline */
     color: inherit; /* Inherits text color */
   }
+  .image-container{
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .project-image{
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+    border-radius: 8px;
+  }
+  .project-card:hover .project-image {
+    filter: grayscale(0%);
+  } 
+  
 
+  /*================= PROJECT 1 STYLES =====================*/
   .project-1-description{
     display: flex;
     align-items: center;
     text-align: end;
     height: 85%;
     padding: 1rem;
-    padding-left: 6rem;
+    padding-left: 5rem;
     font-size: 1.8rem;
     line-height: 1.2;
     color: #333;
+    transition: color 0.5s ease; 
   }
   .project-1-title{
     display: flex;
@@ -59,48 +77,17 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
     text-align: end;
     height: 100%;
     padding: 1rem;
-    padding-top: 5rem;
+    padding-bottom: 4rem;
     font-size: 2.7rem;
     font-weight: bold;
     line-height: 1.2;
     color: #333;
+    transition: color 0.5s ease; 
   }
-  .project-2-description{
-    display: flex;
-    align-items: center;
-    height: 75%;
-    padding: 1rem;
-    padding-bottom: 3rem;
-    padding-right: 6rem;
-    font-size: 1.8rem;
-    line-height: 1.2;
-    color: #333;
-  }
-  .project-2-title{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    padding: 1rem;
-    font-size: 2.7rem;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #333;
-  }
-
-  .image-container{
-    height:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .project-image{
-    border-radius: 8px;
-    filter: blur(4px);
-    transition: filter 0.4s ease;
-  }
-  .project-card:hover .project-image {
-    filter: blur(0);
+  .project-card:hover .project-1-description, .project-card:hover .project-1-title{
+    background: linear-gradient(90deg, #006aff, #66acf6);
+    -webkit-background-clip: text; 
+    color: transparent; 
   }
   .project-1-image-1{
     max-width: 50%; 
@@ -114,6 +101,39 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
     max-width: 112.5%; 
   }
 
+  /*================= PROJECT 2 STYLES =====================*/
+  .project-2-description{
+    display: flex;
+    align-items: center;
+    height: 75%;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    padding-right: 6rem;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: #333;
+    transition: color 0.5s ease; 
+  }
+  .project-2-title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-size: 2.7rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #333;
+    transition: color 0.5s ease; 
+  }
+  .project-card:hover .project-2-description, .project-card:hover .project-2-title{
+    background: linear-gradient(90deg, #f4d522, #fff6cc);
+    -webkit-background-clip: text; 
+    color: transparent; 
+  }
+
+/*================ TEXT STYLES =================*/
   h3{
       user-select: none; /* Disables text selection */
       color:#000000;
@@ -121,6 +141,7 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
   }
   p {
     font-size: 0.7rem;
+    font-weight: bold;
     color: #000000;
   }
 </style>
