@@ -13,7 +13,9 @@ const projects = [
   { title: 'LISD Flextime App', 
     description: 'A multiplatform collection of digital student resources for the Leander Independent School District.', 
     image1: "/Portfolio/projectimages/project2images/LISD_Logo.png",
-    link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' 
+    image2: "/Portfolio/projectimages/project2images/tempPhone1.png",
+    image3: "/Portfolio/projectimages/project2images/laptopTemp1.png",
+    link: 'https://www.leanderisd.org/' 
   },
 ];
 ---
@@ -59,11 +61,11 @@ const projects = [
         </div>
 
         <div class="row row3">
-          <div class="row-col left"><ProjectCard link={projects[1].link}/></div>
+          <div class="row-col left"><ProjectCard link={projects[1].link} image={projects[1].image2} imageClass='project-2-image-2'/></div>
 
           <div class="row-col right">
             <div class="row-col"><ProjectCard link={projects[1].link} image={projects[1].image1}/></div>
-            <div class="row-col"><ProjectCard link={projects[1].link}/></div>
+            <div class="row-col"><ProjectCard link={projects[1].link} image={projects[1].image3} imageClass='project-2-image-3'/></div>
           </div>
         </div>
       </div>
