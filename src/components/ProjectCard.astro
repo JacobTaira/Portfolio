@@ -27,13 +27,15 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
     height: 100%;
     background-color: white; 
     padding: 1rem;
-    border: 1px solid #e8e7e7;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.5s ease;
+    border: 1px solid #e6e6e6;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.5s ease, border 0.5s ease, border-radius 0.2s ease-out;
     user-select: none; /* Disables text selection */
   }
   .project-card:hover {
-    background-color: #242424;
-    transform: scale(1.025);
+    border-radius: 0px;
+    border: 1px solid hsl(0, 0%, 100%);;
+    background-color: #ffffff;
+    transform: scale(1.02);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
   }
   .project-card a {
@@ -128,7 +130,7 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
     transition: color 0.5s ease; 
   }
   .project-card:hover .project-2-description, .project-card:hover .project-2-title{
-    background: linear-gradient(90deg, #f4d522, #fff6cc);
+    background: linear-gradient(90deg, #fcb327, #fecc16);
     -webkit-background-clip: text; 
     color: transparent; 
   }

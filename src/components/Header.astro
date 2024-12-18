@@ -1,13 +1,20 @@
 ---
 //imports here
-import CurrentDate from "./CurrentDate.astro"
+import CurrentDate from "./CurrentDate.astro";
 const currentPath = Astro.url.pathname;
 ---
+<script type="module">
+  import { initDecoding } from '/src/utils/decodingEffect.js';
+  window.addEventListener("DOMContentLoaded", initDecoding);
+</script>
 
 <header>
   <div class="header-left">
     <a href="#"><img src="/Portfolio/HeaderLogo.svg" alt="Logo" class="header-logo"></a>
-    <h1>Jacob Taira <span>&lt; phrase generator w/ decoding effect &gt;</span></h1>
+    <h1>
+      Jacob Taira 
+      <span id="decoding-text"></span>
+    </h1>
   </div>
   
   <div class="header-right">
@@ -27,7 +34,7 @@ const currentPath = Astro.url.pathname;
     </div>
   </div>
 </header>
-  
+
 <style>
   header {
     position: sticky;
@@ -41,31 +48,27 @@ const currentPath = Astro.url.pathname;
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    user-select: none;       
-    border-bottom-color: #838383;
+    user-select: none;    
+    border-bottom-color: #e0dfdf;
     border-bottom-width: .05rem;
     z-index: 10; /*prevents project cards from clipping through header on hover*/
   }
-  .header-left{
-      display: flex;
-      align-items: center;
+  .header-left {
+    display: flex;
+    align-items: center;
   }
   .header-left h1 {
     margin-left: 1.2rem;
     font-size: 1.3rem;
-  }
-  .header-left span {
-    font-size: 0.875rem;
-    opacity: 0.8;
   }
   .header-right {
     display: flex;
     align-items: center;
     gap: 1rem;
   }
-  .header-logo{
-      width: 4.5rem; /* Set width */
-      height: auto; /* Maintain aspect ratio */
+  .header-logo {
+    width: 4.5rem;
+    height: auto; 
   }
   .date-time {
     margin-right: 1rem;
@@ -92,5 +95,9 @@ const currentPath = Astro.url.pathname;
     color: rgb(0, 0, 0);
     text-decoration: none;
   }
+  #decoding-text {
+    font-size: 1rem;
+    opacity: 0.5;
+    color: rgb(0, 0, 0);
+  }
 </style>
-  
