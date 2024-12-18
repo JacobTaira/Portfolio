@@ -10,7 +10,7 @@ export interface Props {
 }
 const { link, description, title, descriptionClass, image, imageClass} = Astro.props;
 ---
-<a href={link} target="_self" rel="noopener noreferrer"> 
+<a href={link} target="_blank" rel="noopener noreferrer"> 
   <div class="project-card">
     {image && 
       <div class="image-container">
