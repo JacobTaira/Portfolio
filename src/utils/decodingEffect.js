@@ -4,10 +4,10 @@ export function initDecoding() {
     const phrases = [
         'is probably coding something...',
         "'s favorite anime is Cowboy Bebop!",
-        'really wants you to click on the \"about me\" section',
+        'really wants you to click on the \"about me\" section.',
         'goes to the gym (and enjoys calisthenics).',
         "is always happy to chat, so you can email whenever!",
-        'would recommend you use a Yeti water bottle; they\'re the best',
+        'would recommend you use a Yeti water bottle; they\'re the best!',
         'wonders if you\'re reading this...'  
     ];
     const targetElement = document.querySelector("#decoding-text");

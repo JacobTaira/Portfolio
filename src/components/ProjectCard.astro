@@ -28,20 +28,18 @@ const { link, description, title, descriptionClass, image, imageClass} = Astro.p
     background-color: white; 
     padding: 1rem;
     border: 1px solid #e6e6e6;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.5s ease, border 0.5s ease, border-radius 0.2s ease-out;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.5s ease;
     user-select: none; /* Disables text selection */
   }
   .project-card:hover {
-    border-radius: 0px;
     border: 1px solid hsl(0, 0%, 100%);;
-    background-color: #ffffff;
     transform: scale(1.02);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
   }
   .project-card a {
     display: block; /* Makes the link cover the entire card */
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherits text color */
+    text-decoration: none; 
+    color: inherit; 
   }
   .image-container{
     height:100%;
