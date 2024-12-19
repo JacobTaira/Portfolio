@@ -20,17 +20,26 @@ const currentPath = Astro.url.pathname;
   <div class="header-right">
     <CurrentDate />
     <div class="nav-icons">
-      <a href="/Portfolio">
-        <img src={currentPath === '/Portfolio/' ? '/Portfolio/selected_home.svg' : '/Portfolio/unselected_home.svg'} alt="Home Icon" />
-      </a>
+      <div class="nav-item">
+        <a href="/Portfolio">
+          <img src={currentPath === '/Portfolio/' ? '/Portfolio/selected_home.svg' : '/Portfolio/unselected_home.svg'} alt="Home Icon" />
+        </a>
+        <span class="nav-text">Home</span>
+      </div>
 
-      <a href="/Portfolio/ideas">
-        <img src={currentPath === '/Portfolio/ideas' ? '/Portfolio/selected_lightbulb.svg' : '/Portfolio/unselected_lightbulb.svg'} alt="Lightbulb Icon" />
-      </a>
+      <div class="nav-item">
+        <a href="/Portfolio/ideas">
+          <img src={currentPath === '/Portfolio/ideas' ? '/Portfolio/selected_lightbulb.svg' : '/Portfolio/unselected_lightbulb.svg'} alt="Lightbulb Icon" />
+        </a>
+        <span class="nav-text">Ideas</span>
+      </div>
 
-      <a href="/Portfolio/about">
-        <img src={currentPath === '/Portfolio/about' ? '/Portfolio/selected_about.svg' : '/Portfolio/unselected_about.svg'} alt="Info Icon" />
-      </a>
+      <div class="nav-item">
+        <a href="/Portfolio/about">
+          <img src={currentPath === '/Portfolio/about' ? '/Portfolio/selected_about.svg' : '/Portfolio/unselected_about.svg'} alt="Info Icon" />
+        </a>
+        <span class="nav-text">About</span>
+      </div>
     </div>
   </div>
 </header>
@@ -70,10 +79,6 @@ const currentPath = Astro.url.pathname;
     width: 4.5rem;
     height: auto; 
   }
-  .date-time {
-    margin-right: 1rem;
-    font-size: 1.3rem;
-  }
   .nav-icons {
     display: flex;
     align-items: center;
@@ -87,9 +92,35 @@ const currentPath = Astro.url.pathname;
     padding: 0 20px;
     gap: 0.5rem;
   }
-  .nav-icons a img {
+  .nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-item a img {
     width: 24px;
     height: 24px;
+    cursor: pointer;
+  }
+  .nav-text {
+    position: absolute;
+    bottom: -2.2rem;
+    opacity: 0;
+    visibility: hidden;
+    background: #333;
+    color: #fff;
+    padding: .3rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transform: translateY(2rem);
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+    pointer-events: none;
+  }
+  .nav-item:hover .nav-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
   a {
     color: rgb(0, 0, 0);
