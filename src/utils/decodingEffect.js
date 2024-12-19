@@ -19,7 +19,7 @@ export function initDecoding() {
   
     const chars = "!<>_\/[]{}+*^?#☟☜☟✂♡";
   
-    const decode = (text, target) => {
+    const decode = (text) => {
       let currentIteration = 0;
   
       return new Promise((resolve) => {
@@ -46,7 +46,7 @@ export function initDecoding() {
       let index = 0;
       while (true) {
         const phrase = phrases[index];
-        await decode(phrase, phrase);
+        await decode(phrase);
         index = (index + 1) % phrases.length;
         await new Promise((res) => setTimeout(res, 5000)); // Adjust delay here
       }

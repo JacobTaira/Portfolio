@@ -24,9 +24,12 @@ const projects = [
   <div class="intro-text">
     <p>Hi! I'm Jacob Taira, a high school senior in Texas currently experimenting with web development and artificial intelligence via computer science.</p>
   </div>
+
   <hr />
+
   <h1>PROJECTS</h1>
-  
+  <div class="bigger-container">
+
     <div class="container">
 
       <div class="col-left">
@@ -45,42 +48,48 @@ const projects = [
 
         <div class="row row4">
           <ProjectCard link={projects[1].link} description={projects[1].description} descriptionClass='project-2-description'/>
+          </div>
         </div>
-      </div>
 
 
-      <div class="col-right">
-        <div class="row row1">
+        <div class="col-right">
+          <div class="row row1">
           <ProjectCard link={projects[0].link} description={projects[0].description} descriptionClass='project-1-description'/>
-        </div>
-
-        <div class="row row2">
-          <div class="project-1-title">
           </div>
-          <ProjectCard link={projects[0].link} description={projects[0].title} descriptionClass='project-1-title'/>
-        </div>
 
-        <div class="row row3">
-          <div class="row-col left"><ProjectCard link={projects[1].link} image={projects[1].image2} imageClass='project-2-image-2'/></div>
+          <div class="row row2">
+            <div class="project-1-title">
+            </div>
+            <ProjectCard link={projects[0].link} description={projects[0].title} descriptionClass='project-1-title'/>
+          </div>
 
-          <div class="row-col right">
-            <div class="row-col"><ProjectCard link={projects[1].link} image={projects[1].image1}/></div>
-            <div class="row-col"><ProjectCard link={projects[1].link} image={projects[1].image3} imageClass='project-2-image-3'/></div>
+          <div class="row row3">
+            <div class="row-col left"><ProjectCard link={projects[1].link} image={projects[1].image2} imageClass='project-2-image-2'/></div>
+
+            <div class="row-col right">
+              <div class="row-col"><ProjectCard link={projects[1].link} image={projects[1].image1}/></div>
+              <div class="row-col"><ProjectCard link={projects[1].link} image={projects[1].image3} imageClass='project-2-image-3'/></div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </Layout>
 
+
 <style>
   /* CONTAINER STYLES */
+  .bigger-container{
+    display: flex;
+    justify-content: center;
+  }
   .container{
     display: flex;
+    align-self: center;
     gap: .5rem;
-    width: 1000px;
-    height: 1500px;
+    width: 64rem;
+    height: 90rem;
   }
   .row{
     border-radius: 12px;
@@ -145,12 +154,12 @@ const projects = [
  /* PAGE STYLES */
   body {
     font-family: 'Arial', 'sans-serif';
-    margin: 0;
-    padding: 0;
+    width: 100%;
     background-color: #ffffff;
   }
   hr {
       border: none;
+      width: 100%; 
       border-top: 1px solid #ccc;
       margin-bottom: 1rem;
       margin-top: 3rem;
@@ -160,11 +169,6 @@ const projects = [
       color:#838383;
       font-size: 0.9rem;
       margin-bottom: 2rem;
-  }
-  .main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
   }
   .intro-text p {
     font-size: 2.5rem;
